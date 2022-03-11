@@ -10,8 +10,8 @@ namespace CheckLineRepeats
     /// </summary>
     public partial class MainWindow : Window
     {
-        System.Windows.Media.SolidColorBrush successBrush = System.Windows.Media.Brushes.LightGreen;
-        System.Windows.Media.SolidColorBrush failBrush = System.Windows.Media.Brushes.Red;
+        private System.Windows.Media.SolidColorBrush successBrush = System.Windows.Media.Brushes.LightGreen;
+        private System.Windows.Media.SolidColorBrush failBrush = System.Windows.Media.Brushes.Red;
 
         public MainWindow()
         {
