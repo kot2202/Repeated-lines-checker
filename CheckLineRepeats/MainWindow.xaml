@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckLineRepeats"
         mc:Ignorable="d"
-        Title="Repeated lines checker" Height="450" Width="800">
+        Title="Repeated lines checker" Height="450" Width="800" MinHeight="256" MinWidth="320">
     <Grid Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -16,7 +16,16 @@
                 <RowDefinition/>
                 <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
-            <TextBox Name="outputTextBox" IsReadOnly="True" TextWrapping="NoWrap" Text="LOAD A FILE" Grid.RowSpan="2" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Stretch"/>
+            <!--<TextBox Name="outputTextBox" IsReadOnly="True" TextWrapping="NoWrap" Text="LOAD A FILE" Grid.RowSpan="2" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Stretch"/>-->
+            <ListView Name="mainListView" d:ItemsSource="{d:SampleData ItemCount=15}" Margin="0,0,0,6">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Text" DisplayMemberBinding="{Binding Path=Text}"/>
+                        <GridViewColumn Header="Count" DisplayMemberBinding="{Binding Path=Count}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <TextBlock Name="outputTextBlock" TextAlignment="Center" TextWrapping="Wrap" Text="No file loaded" Background="White" Grid.RowSpan="2" Foreground="#FF000002" VerticalAlignment="Bottom" FontSize="12"/>
         </Grid>
         <Button BorderThickness="0" HorizontalAlignment="Left" Width="160" Click="OpenFile_Button_Click">
             <TextBlock TextAlignment="Center" FontSize="56" FontWeight="Bold">
