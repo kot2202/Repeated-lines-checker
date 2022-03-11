@@ -6,7 +6,10 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>linechecker.ico</ApplicationIcon>
-    <DebugType>full</DebugType>
+    <DebugType>none</DebugType>
+    <FileVersion>0.8</FileVersion>
+    <AssemblyVersion></AssemblyVersion>
+    <Version>0.8</Version>
   </PropertyGroup>
 
   <ItemGroup>
