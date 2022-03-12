@@ -7,9 +7,9 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>linechecker.ico</ApplicationIcon>
     <DebugType>none</DebugType>
-    <FileVersion>0.8</FileVersion>
+    <FileVersion>0.9</FileVersion>
     <AssemblyVersion></AssemblyVersion>
-    <Version>0.8</Version>
+    <Version>0.9</Version>
   </PropertyGroup>
 
   <ItemGroup>

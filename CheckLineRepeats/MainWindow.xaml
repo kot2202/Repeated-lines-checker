@@ -11,13 +11,33 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Settings" Height="53" VerticalAlignment="Top">
+                <StackPanel>
+                    <CheckBox Name="cbCheckEmptyLines"  Content="Skip empty lines"/>
+                </StackPanel>
+            </GroupBox>
+
+            <Button BorderThickness="0" HorizontalAlignment="Center" Width="160" Click="OpenFile_Button_Click" Margin="0,50,0,0">
+                <TextBlock TextAlignment="Center" FontSize="56" FontWeight="Bold">
+                OPEN
+                <LineBreak/>
+                FILE
+                </TextBlock>
+            </Button>
+        </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
             <!--<TextBox Name="outputTextBox" IsReadOnly="True" TextWrapping="NoWrap" Text="LOAD A FILE" Grid.RowSpan="2" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Stretch"/>-->
-            <ListView Name="mainListView" d:ItemsSource="{d:SampleData ItemCount=15}" Margin="0,0,0,6">
+
+            <ListView Name="mainListView" Margin="0,0,0,6" SelectionMode="Extended">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Text" DisplayMemberBinding="{Binding Path=Text}"/>
@@ -27,12 +47,5 @@
             </ListView>
             <TextBlock Name="outputTextBlock" TextAlignment="Center" TextWrapping="Wrap" Text="No file loaded" Background="White" Grid.RowSpan="2" Foreground="#FF000002" VerticalAlignment="Bottom" FontSize="12"/>
         </Grid>
-        <Button BorderThickness="0" HorizontalAlignment="Left" Width="160" Click="OpenFile_Button_Click">
-            <TextBlock TextAlignment="Center" FontSize="56" FontWeight="Bold">
-                OPEN
-                <LineBreak/>
-                FILE
-            </TextBlock>
-        </Button>
     </Grid>
 </Window>

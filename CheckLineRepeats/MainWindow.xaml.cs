@@ -33,10 +33,18 @@ namespace CheckLineRepeats
 
                 using (var sr = new StreamReader(filename))
                 {
-                    
+
                     var readLine = sr.ReadLine();
                     while (readLine != null)
                     {
+                        if (cbCheckEmptyLines.IsChecked == true)
+                        {
+                            if (readLine.Trim().Length == 0) // this may need more bugtesting
+                            {
+                                readLine = sr.ReadLine();
+                                continue;
+                            }
+                        }
                         lines.Add(readLine);
                         readLine = sr.ReadLine();
                     }
