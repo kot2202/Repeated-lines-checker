@@ -35,9 +35,17 @@
                 <RowDefinition/>
                 <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
-            <!--<TextBox Name="outputTextBox" IsReadOnly="True" TextWrapping="NoWrap" Text="LOAD A FILE" Grid.RowSpan="2" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Stretch"/>-->
-
             <ListView Name="mainListView" Margin="0,0,0,6" SelectionMode="Extended">
+                <ListView.Resources>
+                    <ContextMenu x:Key="ItemContextMenu">
+                        <MenuItem Header="Copy" Click="MenuItem_ClickCopyButton" />
+                    </ContextMenu>
+                </ListView.Resources>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}" >
+                        <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}" />
+                    </Style>
+                </ListView.ItemContainerStyle>
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Text" DisplayMemberBinding="{Binding Path=Text}"/>

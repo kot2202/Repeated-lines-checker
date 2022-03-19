@@ -77,5 +77,10 @@ namespace CheckLineRepeats
                 outputTextBlock.Text = "No duplicates found.";
             }
         }
+
+        private void MenuItem_ClickCopyButton(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(mainListView.SelectedItem.ToString());
+        }
     }
 }
