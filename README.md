@@ -1,1 +1,1 @@
-Repeated lines checker
+Repeated lines checker made with WPF
